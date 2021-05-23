@@ -1,15 +1,20 @@
-import java.util.Arrays;
+package model;
 
 public class Matrix {
+   String name;
    double[][] elements;
+   double determinant;
+
 
 
    public Matrix(){
+
 
    }
 
    public Matrix(double[][] elements){
       this.elements = elements;
+      this.setDeterminant(determinant(elements));
    }
 
    public double determinant(double[][] matrix){
@@ -101,13 +106,23 @@ public class Matrix {
 
    public void setElements(double[][] elements) {
       this.elements = elements;
+      this.setDeterminant(determinant(elements));
+
    }
 
+   public void setName(String name) {
+      this.name = name;
+   }
 
+   public String getName() {
+      return name;
+   }
 
+   public double getDeterminant() {
+      return determinant;
+   }
 
-
-
-
-
+   private void setDeterminant(double determinant) {
+      this.determinant = determinant;
+   }
 }
