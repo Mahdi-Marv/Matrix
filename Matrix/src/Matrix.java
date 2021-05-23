@@ -10,7 +10,7 @@ public class Matrix {
       this.elements = elements;
    }
 
-   private double determinant(double[][] matrix){
+   public double determinant(double[][] matrix){
       if (matrix.length==2){
          return matrix[0][0]*matrix[1][1] - matrix[0][1]*matrix[1][0];
       }else{
@@ -47,7 +47,7 @@ public class Matrix {
 
    } // for determinant
 
-   private Matrix matrixMul(Matrix B) {
+   public Matrix matrixMul(Matrix B) {
       double[][] a = this.getElements();
       double [][] b = B.getElements();
       int rowA = a.length;
