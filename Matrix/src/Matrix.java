@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Matrix {
    double[][] elements;
 
@@ -79,6 +81,20 @@ public class Matrix {
       return new Matrix(result);
    }
 
+   public Matrix transpose(){
+      double[][] matrix = this.getElements();
+      int a = matrix.length;
+      int b = matrix[0].length;
+      double[][] transpose = new double[b][a];
+      for (int i = 0; i < a; i++) {
+         for (int j = 0; j < b; j++) {
+            transpose[j][i] = matrix[i][j];
+         }
+      }
+      return new Matrix(transpose);
+   }
+
+
    public double[][] getElements() {
       return elements;
    }
@@ -86,6 +102,9 @@ public class Matrix {
    public void setElements(double[][] elements) {
       this.elements = elements;
    }
+
+
+
 
 
 
